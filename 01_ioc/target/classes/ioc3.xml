@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.huge0602.ioc3.Car" id="car">
+		<property name="qwer" value="아우디"/>
+	</bean>
+	<bean class="com.huge0602.ioc3.Car" id="car1">
+		<property name="qwer" value="아우디123"/>
+	</bean>
+	<bean class="com.huge0602.ioc3.Car" id="car2">
+		<constructor-arg>
+			<ref bean="str"/>
+		</constructor-arg>
+	</bean>
+	<bean class="com.huge0602.ioc3.Audi" id="audi">
+		<property name="car" ref="car"/>
+	</bean>
+	<bean class="java.lang.String" id="str">
+		<constructor-arg value="abcd"></constructor-arg>
+	</bean>
+	<bean class="java.lang.Integer" id="iii">
+		<constructor-arg>
+			<value>10</value>
+		</constructor-arg>
+	</bean>
+</beans>
