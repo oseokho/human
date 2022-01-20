@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.huge0602.ioc1.KiaMaker" id="kiaMaker"/>
+	<bean class="com.huge0602.ioc1.HyundaiMaker" id="hyundaiMaker"/>
+	<bean class="com.huge0602.ioc1.OrderManager" id="orderManager" scope="prototype">
+<!-- 	id ref로 아래와 같이 갈아 낄수있음-->
+<!-- 		<property name="maker" ref="kiaMaker"></property> -->
+		<property name="maker" ref="hyundaiMaker"></property>
+	</bean>
+</beans>
